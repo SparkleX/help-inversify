@@ -1,0 +1,21 @@
+{
+  "name": "help-inversifyjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/main"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "inversify": "^5.0.1",
+    "inversify-inject-decorators": "^3.1.0",
+    "reflect-metadata": "^0.1.13",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.2"
+  },
+  "devDependencies": {
+    "inversify-binding-decorators": "^4.0.0"
+  }
+}
