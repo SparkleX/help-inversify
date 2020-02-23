@@ -1,5 +1,7 @@
 const Types = {
-    ServiceA: Symbol.for("ServiceA")
+    ServiceA: Symbol.for("ServiceA"),
+    ServiceB: Symbol.for("ServiceB")
+
 };
 
 

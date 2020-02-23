@@ -1,9 +1,9 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 const Types = {
     ComponentSingleton: Symbol.for("ComponentSingleton"),
     ComponentA: Symbol.for("ComponentA"),
     ComponentB: Symbol.for("ComponentB")
-
 };
-
-
-export { Types };
+exports.Types = Types;
+//# sourceMappingURL=Types.js.map

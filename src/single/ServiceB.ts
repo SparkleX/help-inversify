@@ -1,4 +1,5 @@
 import { injectable } from "inversify";
+import { Types } from "./Types";
 
 @injectable()
 export class ServiceB {

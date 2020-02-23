@@ -1,28 +1,33 @@
-import { injectable,inject} from "inversify";
 import "reflect-metadata";
-import { ServiceA } from "./ServiceA";
-import { Types } from "./Types";
+import {injectable, inject } from "inversify";
 import getDecorators from "inversify-inject-decorators";
-import {container} from "./Inversify.config"
+import {TYPE} from "./TYPE"
+import {global} from "./Global"
+//import {IServiceA} from "./IServiceA"
+import {ServiceA} from "./ServiceA"
 
-let { lazyInject } = getDecorators(container);
+const { lazyInject } = getDecorators(global.container);
+
 
 @injectable()
 export class ServiceB {
-    private count = 0;
-    
-    @lazyInject(Types.ServiceA)
-    public serviceA: ServiceA;
+    @lazyInject(TYPE.ServiceA)
+    public dom: ServiceA;
+    public count:number = 0;
 
-    public test() {
-        console.debug(`ServiceB.test : ${this.count}`);
-        console.debug('a');
-        console.debug(this.serviceA==undefined);
-        this.serviceA.method();
-        console.debug('b');
-        this.count++;
+    constructor (
+    ) {
+        console.debug(`ServiceB.constructor`);
+
     }
-    public method() {
-        console.debug('ServiceB.method');
+    public test() {
+        console.debug(`ServiceB.test  - ${this.count}`);
+        this.count++;
+        this.dom.method();
+    }
+    method(): void {
+        console.debug(`ServiceB.method - ${this.count}`);
+        this.count++;
+
     }
 }
